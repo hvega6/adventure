@@ -111,3 +111,23 @@ class AdventurerFactory {
         return this.adventurers.find((a) => a.name === name);
     }
 }
+
+// Part 6 & 7: Developing Skills & Adventure Forth
+// Creating characters
+const robin = new Adventurer("Robin", "Fighter");
+robin.companion = new Companion("Leo", "Cat");
+robin.companion.companion = new Companion("Frank", "Flea");
+robin.companion.companion.inventory = ["small hat", "sunglasses"];
+
+const healerFactory = new AdventurerFactory("Healer");
+const mage = healerFactory.generate("Merlin");
+
+// Demonstrating functionality
+console.log("\nDemonstrating functionality:");
+robin.scout();
+mage.scout();
+
+console.log("\nStarting a duel between Robin and Merlin:");
+robin.duel(mage);
+
+// You can continue to expand this system by adding more classes, methods, and interactions!
