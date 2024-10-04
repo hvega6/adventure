@@ -89,3 +89,25 @@ class Companion extends Character {
 
 // Part 4: Class Uniforms
 // (Already implemented in the classes above)
+
+// Part 5: Gather your Party
+class AdventurerFactory {
+    constructor(role) {
+      this.role = role;
+      this.adventurers = [];
+    }
+  
+    generate(name) {
+      const newAdventurer = new Adventurer(name, this.role);
+      this.adventurers.push(newAdventurer);
+      return newAdventurer;
+    }
+  
+    findByIndex(index) {
+      return this.adventurers[index];
+    }
+  
+    findByName(name) {
+      return this.adventurers.find((a) => a.name === name);
+    }
+  }
