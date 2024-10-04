@@ -61,22 +61,32 @@ class Adventurer extends Character {
     }
 
     duel(opponent) {
-        console.log(`${this.name} is dueling ${opponent.name}!`);
+        console.log(`\n${this.name} (${this.role}) is dueling ${opponent.name} (${opponent.role})!`);
+        console.log(`Starting Health - ${this.name}: ${this.health}, ${opponent.name}: ${opponent.health}`);
+
+        let round = 1;
         while (this.health > 50 && opponent.health > 50) {
+            console.log(`\nRound ${round}:`);
             const thisRoll = this.roll();
             const opponentRoll = opponent.roll();
+
             if (thisRoll > opponentRoll) {
                 opponent.health -= 1;
-                console.log(`${this.name} wins this round! ${opponent.name}'s health: ${opponent.health}`);
+                console.log(`${this.name} wins this round!`);
             } else if (opponentRoll > thisRoll) {
                 this.health -= 1;
-                console.log(`${opponent.name} wins this round! ${this.name}'s health: ${this.health}`);
+                console.log(`${opponent.name} wins this round!`);
             } else {
                 console.log("It's a tie! No damage dealt.");
             }
+
+            console.log(`Current Health - ${this.name}: ${this.health}, ${opponent.name}: ${opponent.health}`);
+            round++;
         }
+
         const winner = this.health > 50 ? this : opponent;
-        console.log(`The duel is over! ${winner.name} is victorious!`);
+        console.log(`\nThe duel is over! ${winner.name} is victorious!`);
+        console.log(`Final Health - ${this.name}: ${this.health}, ${opponent.name}: ${opponent.health}`);
     }
 }
 
