@@ -86,3 +86,6 @@ class Companion extends Character {
         this.type = type;
     }
 }
+
+// Part 4: Class Uniforms
+// (Already implemented in the classes above)
