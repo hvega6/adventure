@@ -132,12 +132,14 @@ robin.companion.companion.inventory = ["small hat", "sunglasses"];
 const healerFactory = new AdventurerFactory("Healer");
 const mage = healerFactory.generate("Merlin");
 
-// Demonstrating functionality
+//Functionality
 console.log("\nDemonstrating functionality:");
 robin.scout();
 mage.scout();
 
 console.log("\nStarting a duel between Robin and Merlin:");
 robin.duel(mage);
+
+
 
 // You can continue to expand this system by adding more classes, methods, and interactions!
